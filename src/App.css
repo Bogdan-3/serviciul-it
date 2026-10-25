@@ -1,0 +1,182 @@
+/* Toate culorile paginii */
+:root {
+  --page-bg: #050816;
+  --title-start: #60A5FA;
+  --title-end: #93C5FD;
+  --subtitle: #D1D5DC;
+  --bar-top: #1D4ED8;
+  --bar-bottom: #1E40AF;
+  --name: #DBEAFE;
+  --role: #D1D5DC;
+  --email: #93C5FD;
+  --email-hover: #FFFFFF;
+  --no-photo-top: #1E3A8A;
+  --no-photo-bottom: #0F1D4A;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page-bg);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+
+/* Pagina: totul centrat */
+.page {
+  padding: 28px 16px 48px;
+}
+
+/* Titlul, colorat cu un gradient; \n din config.js trece pe rândul următor */
+.title {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  white-space: pre-line;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  background: linear-gradient(90deg, var(--title-start), var(--title-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin: 6px 0 40px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--subtitle);
+}
+
+/* Un rând de cartonașe, centrat */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+/* Restul membrilor: maximum 4 pe rând (4 × 218 + 3 × 30) */
+.row-rest {
+  max-width: 962px;
+  margin-top: 30px;
+}
+
+/* Cartonașul */
+.card {
+  width: 218px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-photo {
+  display: block;
+  width: 218px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* În locul pozei lipsă: inițialele */
+.card-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(var(--no-photo-top), var(--no-photo-bottom));
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  color: var(--name);
+}
+
+/* Bara de jos, cu numele și rolul */
+.card-info {
+  height: 55px;
+  padding: 8px 10px;
+  background: linear-gradient(var(--bar-top), var(--bar-bottom));
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-name {
+  margin: 0;
+  min-width: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--name);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-role {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--role);
+}
+
+.card-email {
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 2px;
+  color: var(--email);
+}
+
+.card-email:hover {
+  color: var(--email-hover);
+}
+
+.card-email:focus-visible {
+  outline: 2px solid var(--email);
+  outline-offset: 2px;
+}
+
+/* Telefon: câte 2 cartonașe pe rând */
+@media (max-width: 520px) {
+  .row {
+    gap: 12px;
+  }
+
+  .row-rest {
+    margin-top: 12px;
+  }
+
+  .card {
+    width: calc((100% - 12px) / 2);
+  }
+
+  .card-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 218 / 300;
+  }
+
+  .card-info {
+    height: auto;
+    min-height: 55px;
+  }
+
+  .card-name {
+    font-size: 14px;
+  }
+}
