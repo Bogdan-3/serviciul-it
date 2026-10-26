@@ -6,7 +6,7 @@ export const members = [
   { name: "John", role: "Coordonator", photo: "John.webp", email: "nume@mail.ro" },
   { name: "Sara Nicușan", role: "Secretar", photo: "Sara.webp", email: "nume@mail.ro" },
   { name: "Alex Bledea", role: "Co-coordonator", photo: "Bledea.webp", email: "nume@mail.ro" },
-  { name: "Bogdan Galis", role: "Co-coordonator", photo: "Galis.webp", email: "nume@mail.ro" },
+  { name: "Galis", role: "Co-coordonator", photo: "Galis_nou.webp", email: "nume@mail.ro" },
   { name: "Cristian Josan", role: "Co-coordonator", photo: "Josan.webp", email: "nume@mail.ro" },
   { name: "Paul Birilă", role: "Co-coordonator", photo: "Paul.webp", email: "nume@mail.ro" },
 ];
