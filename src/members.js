@@ -3,7 +3,7 @@
 // photo = numele unui fișier din public/photos sau un link complet (https://...).
 export const members = [
   { name: "Tudor Cos Cel Mare", role: "Responsabil BC", photo: "Tudor Coș.jpg", email: "exemplu@exemplu.ro" },
-  { name: "John", role: "Coordonator", photo: "mihai.svg", email: "exemplu@exemplu.ro" },
+  { name: "Vladimir", role: "Coordonator", photo: "mihai.svg", email: "exemplu@exemplu.ro" },
   { name: "Sara Nicușan", role: "Secretar", photo: "Sara Nicusan.jpeg", email: "exemplu@exemplu.ro" },
   { name: "Alex Bledea", role: "Cocoordonator", photo: "Bledea Alexandru.jpg", email: "exemplu@exemplu.ro" },
   { name: "Bogdan Galis", role: "Cocoordonator", photo: "Galis.jpg", email: "exemplu@exemplu.ro" },
