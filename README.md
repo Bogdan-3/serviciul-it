@@ -12,8 +12,8 @@ Singurul fișier pe care îl modifici este **`src/members.js`**.
 4. Pune-ți datele tale.
 
 ```js
-  { name: "Bianca Lazăr", role: "Cocoordonator", photo: "bianca.svg", email: "bianca.lazar@exemplu.ro" },
-  { name: "Prenume Nume", role: "Membru", photo: "prenume.jpg", email: "prenume.nume@exemplu.ro" },
+  { name: "Paul Birilă", role: "Co-coordonator", photo: "Paul.webp", email: "nume@mail.ro" },
+  { name: "Prenume Nume", role: "Membru", photo: "prenume.webp", email: "prenume.nume@exemplu.ro" },
 ];
 ```
 
@@ -32,10 +32,11 @@ Atenție:
 
 ## Poza
 
-- Pune poza în `public/photos/`, în format portret (de exemplu 800 × 1100 px), și scrie la `photo` doar numele fișierului: `photo: "prenume.jpg"`.
+- Pune poza în `public/photos/`, în format portret (de exemplu 800 × 1100 px), și scrie la `photo` doar numele fișierului: `photo: "prenume.webp"`. Merg `.webp`, `.jpg` și `.png`.
 - Sau folosește un link direct către o poză: `photo: "https://..."`.
 - Fără poză (sau dacă poza nu se încarcă), pe cartonaș apar inițialele tale.
-- Contează literele mari și mici: `Prenume.JPG` nu e același fișier cu `prenume.jpg`.
+- Numele fișierului fără spații și fără diacritice: `Cos.webp`, nu `Tudor Coș.jpg`.
+- Contează literele mari și mici: `Prenume.WEBP` nu e același fișier cu `prenume.webp`.
 - Ține poza mică (sub 500 KB), ca pagina să se încarce repede.
 
 ## Pașii în GitHub Desktop
@@ -49,29 +50,36 @@ Atenție:
 
 ## Aceiași pași în terminal
 
-Înlocuiește linkul cu cel al repo-ului (butonul verde `Code` de pe GitHub).
-
 ```bash
-git clone https://github.com/ORGANIZATIA/serviciul-it.git
+git clone https://github.com/alex22bledea/serviciul-it.git
 cd serviciul-it
 git switch -c feat/card-prenume
 
 # modifici src/members.js (și, dacă e cazul, adaugi poza în public/photos)
 
 git status
-git add src/members.js public/photos/prenume.jpg
+git add src/members.js
+git add public/photos/prenume.webp   # doar dacă ai adăugat o poză
 git commit -m "feat: adaugă cartonașul lui Prenume"
 git push -u origin feat/card-prenume
 ```
 
 Apoi intri pe GitHub și apeși `Compare & pull request`.
 
+**Dacă nu ai drept de scriere în repo** (nu ești adăugat ca colaborator), `git push` o să dea eroare. În cazul ăsta apasă întâi `Fork` pe pagina repo-ului de pe GitHub, apoi clonează fork-ul tău, nu repo-ul original:
+
+```bash
+git clone https://github.com/NUMELE-TAU/serviciul-it.git
+```
+
+Restul pașilor sunt la fel. Pull request-ul se deschide tot către repo-ul original.
+
 ## Ce faci la un merge conflict
 
 Dacă tu și un coleg ați adăugat câte o linie în același loc, Git nu știe pe care s-o păstreze și îți arată ambele variante:
 
 ```
-  { name: "Bianca Lazăr", role: "Cocoordonator", photo: "bianca.svg", email: "bianca.lazar@exemplu.ro" },
+  { name: "Paul Birilă", role: "Co-coordonator", photo: "Paul.webp", email: "nume@mail.ro" },
 <<<<<<< HEAD
   { name: "Ion Vasile", role: "Membru", photo: "ion.jpg", email: "ion.vasile@exemplu.ro" },
 =======
@@ -86,7 +94,7 @@ Dacă tu și un coleg ați adăugat câte o linie în același loc, Git nu știe
 Aici vrem **ambele linii**: le păstrezi pe amândouă și ștergi cele trei rânduri cu marcaje.
 
 ```js
-  { name: "Bianca Lazăr", role: "Cocoordonator", photo: "bianca.svg", email: "bianca.lazar@exemplu.ro" },
+  { name: "Paul Birilă", role: "Co-coordonator", photo: "Paul.webp", email: "nume@mail.ro" },
   { name: "Ion Vasile", role: "Membru", photo: "ion.jpg", email: "ion.vasile@exemplu.ro" },
   { name: "Elena Dobre", role: "Membru", photo: "elena.jpg", email: "elena.dobre@exemplu.ro" },
 ];
@@ -94,7 +102,7 @@ Aici vrem **ambele linii**: le păstrezi pe amândouă și ștergi cele trei râ
 
 Apoi salvezi, faci commit și push.
 
-- **În GitHub Desktop**: `Branch → Update from main`. La conflict, deschizi fișierul în editor, îl repari, apoi `Continue merge` și `Push origin`.
+- **În GitHub Desktop**: `Branch → Update from main` (pe un fork apare `upstream/main`). La conflict, deschizi fișierul în editor, îl repari, apoi `Continue merge` și `Push origin`.
 - **În terminal**:
   ```bash
   git fetch origin
@@ -103,6 +111,12 @@ Apoi salvezi, faci commit și push.
   git add src/members.js
   git commit -m "fix: rezolvă conflictul din members.js"
   git push
+  ```
+  Dacă lucrezi pe un fork, `origin` e fork-ul tău, așa că iei modificările din repo-ul original. Înlocuiești primele două comenzi cu:
+  ```bash
+  git remote add upstream https://github.com/alex22bledea/serviciul-it.git
+  git fetch upstream
+  git merge upstream/main
   ```
 - **Direct pe GitHub**: în pull request apeși `Resolve conflicts`, repari la fel, apoi `Mark as resolved` și `Commit merge`.
 
@@ -127,4 +141,4 @@ Deschide linkul afișat în terminal (de obicei http://localhost:5173). Când sa
 
 ## Cartonașele colegilor
 
-Poți modifica și cartonașele colegilor (de exemplu un rol mai amuzant), în glumă și cu bun-simț: pe un branch separat (de exemplu `fix/card-andrei`) și prin pull request, ca toată lumea să vadă ce s-a schimbat. **Nu șterge cartonașele altora.**
+Poți modifica și cartonașele colegilor (de exemplu un rol mai amuzant), în glumă și cu bun-simț: pe un branch separat (de exemplu `fix/card-paul`) și prin pull request, ca toată lumea să vadă ce s-a schimbat. **Nu șterge cartonașele altora.**
