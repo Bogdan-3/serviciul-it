@@ -2,11 +2,11 @@
 // Ca să te adaugi: copiază o linie, lipește-o la final (înainte de `];`) și schimbă datele.
 // photo = numele unui fișier din public/photos sau un link complet (https://...).
 export const members = [
-  { name: "Tudor Cos Cel Mare", role: "Responsabil BC", photo: "Tudor Coș.jpg", email: "exemplu@exemplu.ro" },
-  { name: "Vladimir", role: "Coordonator", photo: "mihai.svg", email: "exemplu@exemplu.ro" },
-  { name: "Sara Nicușan", role: "Secretar", photo: "Sara Nicusan.jpeg", email: "exemplu@exemplu.ro" },
-  { name: "Alex Bledea", role: "Cocoordonator", photo: "Bledea Alexandru.jpg", email: "exemplu@exemplu.ro" },
-  { name: "Bogdan Galis", role: "Cocoordonator", photo: "Galis.jpg", email: "exemplu@exemplu.ro" },
-  { name: "Cristian Josan", role: "Cocoordonator", photo: "Cristian Josan.jpeg", email: "exemplu@exemplu.ro" },
-  { name: "Paul Birilă", role: "Cocoordonator", photo: "Paul.jpg", email: "exemplu@exemplu.ro" },
+  { name: "Tudor Coș", role: "Responsabil BC", photo: "Cos.webp", email: "nume@mail.ro" },
+  { name: "John", role: "Coordonator", photo: "John.webp", email: "nume@mail.ro" },
+  { name: "Sara Nicușan", role: "Secretar", photo: "Sara.webp", email: "nume@mail.ro" },
+  { name: "Alex Bledea", role: "Co-coordonator", photo: "Bledea.webp", email: "nume@mail.ro" },
+  { name: "Bogdan Galis", role: "Co-coordonator", photo: "Galis.webp", email: "nume@mail.ro" },
+  { name: "Cristian Josan", role: "Co-coordonator", photo: "Josan.webp", email: "nume@mail.ro" },
+  { name: "Paul Birilă", role: "Co-coordonator", photo: "Paul.webp", email: "nume@mail.ro" },
 ];
