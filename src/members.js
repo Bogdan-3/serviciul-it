@@ -9,4 +9,5 @@ export const members = [
   { name: "Galis", role: "Co-coordonator", photo: "Galis_nou.webp", email: "nume@mail.ro" },
   { name: "Cristian Josan", role: "Co-coordonator", photo: "Josan.webp", email: "nume@mail.ro" },
   { name: "Paul Birilă", role: "Co-coordonator", photo: "Paul.webp", email: "nume@mail.ro" },
+  { name: "Bogdan Ionut", role: "Recrut", photo: "Cool_Photo.png", email: "bogdanbrasoveanu4@gmail.com" },
 ];
